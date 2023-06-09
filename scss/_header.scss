@@ -1,0 +1,26 @@
+.main{
+    &-header{
+        @include widhei (100vw, auto);
+        &__navbar{
+            @include justali (center, center);
+            @include display(flex);
+            @include flex(col);
+            &--logo{
+                @include marpad (0, 13px 20px);
+                &--link{
+                    &--img{
+                        @include widhei (11rem, auto)
+                    }
+                }
+            }
+            &--subpages{
+                @include widhei (100vw, auto);
+                &--list{
+                    @include display (flex);
+                    @include justali (space-around, center);
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
