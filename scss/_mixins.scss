@@ -1,0 +1,103 @@
+/* DISPLAY */
+@mixin display ($display: flex){
+    @if $display == flex{
+        display: flex;
+    }
+    @else if $display == no{
+        display: none;
+    }
+    @else if $display == blo{
+        display: block;
+    }
+    @else if $display == in{
+        display: inline;
+    }
+    @else if $display == inblo{
+        display: inline-block;
+    }
+}
+
+/* FLEX DIRECTION */
+@mixin flex ($flex: row){
+    @if $flex == row{
+        flex-direction: row;
+    }
+    @else if $flex == col{
+        flex-direction: column;
+    }
+    @else if $flex == row-re{
+        flex-direction: row-reverse;
+    }
+    @else if $flex == col-re{
+        flex-direction: column-reverse;
+    }
+    @else if $flex == wrap{
+        flex-wrap: wrap;
+    }
+    @else if $flex == nowrap{
+        flex-wrap: nowrap;
+    }
+}
+
+/* JUSTIFY CONTENT */
+@mixin justali ($just, $ali){
+    justify-content:$just;
+    align-items: $ali;
+}
+
+/* TEXTOS */
+@mixin texts ($size, $weight, $color){
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+/* FONT-SIZE */
+@mixin fs ($fs){
+    font-size: $fs;
+}
+
+/* MARGIN Y PADDING */
+@mixin marpad ($mar, $pad){
+    margin: $mar;
+    padding: $pad;
+}
+
+/* MARGIN */
+@mixin mar($mar){
+    margin: $mar;
+}
+
+/* PADDING */
+@mixin pad($pad){
+    padding: $pad;
+}
+
+/* WIDTH Y HEIGHT */
+@mixin widhei($width, $height){
+    width: $width;
+    height: $height;
+}
+
+/* WIDTH */
+@mixin wid($width){
+    width: $width;
+}
+
+/* HEIGHT */
+@mixin hei($height){
+    height: $height;
+}
+
+/* POSITIONS */
+@mixin position($position, $top, $left){
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+/* LISTAS */
+@mixin list($style, $decor){
+    list-style: $style;
+    text-decoration: $decor;
+}

@@ -1,0 +1,8 @@
+node_modules/
+*.json
+*.vsc
+*.psd
+*.log
+*.ai
+*.msi
+main.css.map
