@@ -1,25 +1,97 @@
-.main{
+.index{
     &-header{
         @include widhei (100vw, auto);
-        &__navbar{
-            @include justali (center, center);
-            @include display(flex);
-            @include flex(col);
-            &--logo{
-                @include marpad (0, 13px 20px);
-                &--link{
-                    &--img{
-                        @include widhei (11rem, auto)
+        background-color: rgba(225, 225, 225, 0.542);
+        &__div{
+            @include widhei(100vw, auto);
+            @include justali (space-between, center);
+            @include display (flex);
+            @include pad (12px 30px);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100000;
+            &--hamburger{
+                cursor: pointer;
+                z-index: 1100;
+                .bar{
+                    @include widhei (24px, 3px);
+                    @include display (blo);
+                    @include mar (4px 0);
+                    background-color: rgb(25, 25, 25);
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                }
+                &.active{
+                    & .bar:nth-child(1){
+                        background-color: rgb(223, 223, 223);
+                        transform: translateY(7px) rotate(45deg);
+                    }
+                    & .bar:nth-child(2){
+                        opacity: 0;
+                        transition: all 0.01s ease-in-out;
+                    }
+                    & .bar:nth-child(3){
+                        background-color: rgb(223, 223, 223);
+                        transform: translateY(-7px) rotate(-45deg);
                     }
                 }
             }
+        }
+        &__navbar{
+            transition: all 0.4s ease;
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 1000;
+            &.active{
+                left: 0
+            }
             &--subpages{
-                @include widhei (100vw, auto);
+                @include widhei (30vw, 100vh);
+                @include justali (start, center);
+                @include display (flex);
+                background-color: rgba(25, 25, 25, 0.872);
                 &--list{
+                    @include widhei (100%, 100%);
+                    @include justali (center, start);
                     @include display (flex);
-                    @include justali (space-around, center);
+                    @include flex (col);
+                    @include pad (45px 10px);
                     list-style: none;
+                    &--elements{
+                        @include widhei (100%, auto);
+                        @include pad (10px);
+                        border-radius: 3px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgba(44, 44, 44, 0.446);
+                        }
+                        &--links{
+                            @include texts (2.4rem, 400, rgb(223, 223, 223));
+                            text-decoration: none
+                        }
+                    }
                 }
+            }
+        }
+    }
+    &-main{
+        @include widhei (100vw, 100vh);
+        &__div{
+            @include display (flex);
+            @include justali (center, center);
+            &--text{
+                @include texts (18em, 500, black);
+                @include pad (30px 0 0 0)
+            }
+            &--img{
+                @include widhei (30em, 30em);
+                position: absolute;
+                top: 10%;
+                left: 33%;
             }
         }
     }
