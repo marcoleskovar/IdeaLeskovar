@@ -1,0 +1,27 @@
+.index{
+    &-main{
+        @include widhei (100vw, 100vh);
+        overflow-x: hidden;
+        z-index: 900;
+        &__div{
+            @include widhei (100vw, 100vh);
+            @include display (flex);
+            @include justali (center, center);
+            text-align: center;
+            position: relative;
+            &--text{
+                font-family: 'Oswald', sans-serif;
+                @include texts (20em, 500, black);
+                @include pad (30px 0 0 0);
+                cursor: default;
+            }
+            &--img{
+                @include widhei (30em, 30em);
+                position: absolute;
+                top: 15%;
+                left: 33%;
+                cursor:default;
+            }
+        }
+    }
+}

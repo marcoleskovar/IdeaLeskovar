@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fjalla+One&family=Oswald:wght@200;300;400;500;600;700&family=Rammetto+One&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap&family=Righteous&display=swap&family=Pacifico&display=swap&family=Bagel+Fat+One&family=Fjalla+One&family=Oswald:wght@200;300;400;500;600;700&family=Rammetto+One&family=Shrikhand&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +10,7 @@ html {
   font-size: 62, 5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(187, 187, 187);
 }
 
 /* DISPLAY */
@@ -29,26 +29,25 @@ html {
 .index-header {
   width: 100vw;
   height: auto;
-  background-color: rgba(225, 225, 225, 0.542);
 }
-.index-header__div {
-  width: 100vw;
+.index-header__right {
+  width: 33vw;
   height: auto;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   display: flex;
   padding: 12px 30px;
-  backdrop-filter: blur(20px);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100000;
+  z-index: 1000;
 }
-.index-header__div--hamburger {
+.index-header__right--hamburger {
+  padding: 3px 0;
   cursor: pointer;
   z-index: 1100;
 }
-.index-header__div--hamburger .bar {
+.index-header__right--hamburger .bar {
   width: 24px;
   height: 3px;
   display: block;
@@ -57,17 +56,70 @@ html {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.index-header__div--hamburger.active .bar:nth-child(1) {
+.index-header__right--hamburger.active .bar:nth-child(1) {
   background-color: rgb(223, 223, 223);
   transform: translateY(7px) rotate(45deg);
 }
-.index-header__div--hamburger.active .bar:nth-child(2) {
+.index-header__right--hamburger.active .bar:nth-child(2) {
   opacity: 0;
   transition: all 0.01s ease-in-out;
 }
-.index-header__div--hamburger.active .bar:nth-child(3) {
+.index-header__right--hamburger.active .bar:nth-child(3) {
   background-color: rgb(223, 223, 223);
   transform: translateY(-7px) rotate(-45deg);
+}
+.index-header__logo {
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 12px 30px;
+  background-color: rgba(255, 255, 255, 0.307);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 950;
+}
+.index-header__logo--link {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: rgb(25, 25, 25);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 100000;
+}
+.index-header__left {
+  width: 33vw;
+  height: auto;
+  justify-content: end;
+  align-items: center;
+  display: flex;
+  padding: 12px 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+.index-header__left--carrito {
+  margin: 0 10px;
+  padding: 0 1px;
+  cursor: pointer;
+}
+.index-header__left--carrito svg {
+  transform: scaleX(-1);
+  width: 1.7em;
+  height: 1.7em;
+}
+.index-header__left--lupa {
+  margin: 0 10px;
+  padding: 0 1px;
+  cursor: pointer;
+}
+.index-header__left--lupa svg {
+  width: 1.6em;
+  height: 1.6em;
 }
 .index-header__navbar {
   transition: all 0.4s ease;
@@ -75,7 +127,7 @@ html {
   position: fixed;
   top: 0;
   left: -100%;
-  z-index: 1000;
+  z-index: 970;
 }
 .index-header__navbar.active {
   left: 0;
@@ -101,40 +153,60 @@ html {
 .index-header__navbar--subpages--list--elements {
   width: 100%;
   height: auto;
+  justify-content: start;
+  align-items: center;
+  display: flex;
   padding: 10px;
+  max-height: 67px;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .index-header__navbar--subpages--list--elements:hover {
-  background-color: rgba(44, 44, 44, 0.446);
+  background-color: rgba(75, 75, 75, 0.446);
+}
+.index-header__navbar--subpages--list--elements:hover a {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(10px);
+  color: rgb(96, 135, 233);
 }
 .index-header__navbar--subpages--list--elements--links {
   font-size: 2.4rem;
-  font-weight: 400;
+  font-weight: 300;
   color: rgb(223, 223, 223);
   text-decoration: none;
 }
+
 .index-main {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
+  z-index: 900;
 }
 .index-main__div {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  position: relative;
 }
 .index-main__div--text {
-  font-size: 18em;
+  font-family: "Oswald", sans-serif;
+  font-size: 20em;
   font-weight: 500;
   color: black;
   padding: 30px 0 0 0;
+  cursor: default;
 }
 .index-main__div--img {
   width: 30em;
   height: 30em;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 33%;
+  cursor: default;
 }
 
 /*# sourceMappingURL=main.css.map */

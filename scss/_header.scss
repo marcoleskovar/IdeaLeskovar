@@ -1,18 +1,17 @@
 .index{
     &-header{
         @include widhei (100vw, auto);
-        background-color: rgba(225, 225, 225, 0.542);
-        &__div{
-            @include widhei(100vw, auto);
-            @include justali (space-between, center);
+        &__right{
+            @include widhei(33vw, auto);
+            @include justali (start, center);
             @include display (flex);
             @include pad (12px 30px);
-            backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 100000;
+            z-index: 1000;
             &--hamburger{
+                @include pad(3px 0);
                 cursor: pointer;
                 z-index: 1100;
                 .bar{
@@ -39,13 +38,56 @@
                 }
             }
         }
+        &__logo{
+            @include widhei (100vw, auto);
+            @include justali (center, center);
+            @include display (flex);
+            @include pad (12px 30px);
+            background-color: rgba(255, 255, 255, 0.307);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 950;
+            &--link{
+                @include texts (1.3em, 500, rgb(25, 25, 25));
+                text-decoration: none;
+                cursor: pointer;
+                z-index: 100000;
+            }
+        }
+        &__left{
+            @include widhei(33vw, auto);
+            @include justali (end, center);
+            @include display (flex);
+            @include pad (12px 30px);
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            &--carrito{
+                @include marpad (0 10px, 0 1px);
+                cursor: pointer;
+                & svg{
+                    transform: scaleX(-1);
+                    @include widhei (1.7em, 1.7em);
+                }
+            }
+            &--lupa{
+                @include marpad (0 10px, 0 1px);
+                cursor: pointer;
+                & svg{
+                    @include widhei (1.6em, 1.6em);
+                }
+            }
+        }
         &__navbar{
             transition: all 0.4s ease;
             backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: -100%;
-            z-index: 1000;
+            z-index: 970;
             &.active{
                 left: 0
             }
@@ -63,35 +105,27 @@
                     list-style: none;
                     &--elements{
                         @include widhei (100%, auto);
+                        @include justali (start, center);
+                        @include display (flex);
                         @include pad (10px);
+                        max-height: 67px;
                         border-radius: 3px;
                         cursor: pointer;
+                        transition: all 0.3s;
                         &:hover{
-                            background-color: rgba(44, 44, 44, 0.446);
+                            background-color: rgba(75, 75, 75, 0.446);
+                            & a{
+                                transition: all 0.3s ease-in-out;
+                                transform: translateX(10px);
+                                color: rgb(96, 135, 233)
+                            }
                         }
                         &--links{
-                            @include texts (2.4rem, 400, rgb(223, 223, 223));
+                            @include texts (2.4rem, 300, rgb(223, 223, 223));
                             text-decoration: none
                         }
                     }
                 }
-            }
-        }
-    }
-    &-main{
-        @include widhei (100vw, 100vh);
-        &__div{
-            @include display (flex);
-            @include justali (center, center);
-            &--text{
-                @include texts (18em, 500, black);
-                @include pad (30px 0 0 0)
-            }
-            &--img{
-                @include widhei (30em, 30em);
-                position: absolute;
-                top: 10%;
-                left: 33%;
             }
         }
     }
