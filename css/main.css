@@ -10,7 +10,7 @@ html {
   font-size: 62, 5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: rgb(187, 187, 187);
+  background-color: rgb(226, 226, 226);
 }
 
 /* DISPLAY */
@@ -75,7 +75,7 @@ html {
   align-items: center;
   display: flex;
   padding: 12px 30px;
-  background-color: rgba(255, 255, 255, 0.307);
+  background-color: rgba(226, 226, 226, 0.483);
   backdrop-filter: blur(20px);
   position: fixed;
   top: 0;
@@ -181,6 +181,7 @@ html {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  background-color: rgb(226, 226, 226);
   z-index: 900;
 }
 .index-main__div {
