@@ -1,19 +1,22 @@
 //Boton hamburguesa
 const hamburger = document.querySelector ('.index-header__right--hamburger')
-const supagesList = document.querySelector ('.index-header__navbar')
+const navbar = document.querySelector ('.index-header__navbar')
 const subpagesListElements = document.querySelectorAll ('.index-header__navbar--subpages--list--elements')
 
 hamburger.onclick = () =>{
     hamburger.classList.toggle('active')
-    supagesList.classList.toggle('active')
+    navbar.classList.toggle('active')
 }
-
-document.querySelectorAll(".index-header__navbar--subpages--list--elements").forEach(n  => n.onclick = () =>{
-    hamburger.classList.remove('active')
-    supagesList.classList.remove('active')
+    subpagesListElements.forEach(n  => {
+    n.onclick = () =>{
+        hamburger.classList.remove('active')
+        navbar.classList.remove('active')
+    }
 })
 
-//Parallex main-text
+//EVENTOS DEL SCROLL
+
+//Parallex main-text || Subpages cambiacolor
 window.onscroll = () =>{
     const posicionScroll = window.scrollY
     const metanoiaTexto = document.querySelector('.index-main__div--text')
@@ -24,7 +27,7 @@ window.onscroll = () =>{
     metanoiaMariposa.style.transform = `translateY(${posicionScroll * velocidadImagen}px)`
   };
 
-  //Aparece y desaparece logo
+//Header appear
   let logoEsVisible = false
   window.addEventListener('scroll', ()=>{
     let divLogoHeader = document.getElementById ('divLogoHeader')
