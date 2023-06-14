@@ -1,28 +1,36 @@
 .index{
     &-main{
-        @include widhei (100vw, 100vh);
+        @include widhei (100%, 100vh);
+        @include justali (center, center);
+        @include display (flex);
         overflow-x: hidden;
-        background-color: rgb(226, 226, 226);;
-        z-index: 900;
+        background-image: linear-gradient(to bottom, rgb(25, 25, 25),rgb(62, 62, 62));
         &__div{
-            @include widhei (100vw, 100vh);
+            @include widhei (100%, 100vh);
             @include display (flex);
             @include justali (center, center);
             text-align: center;
             position: relative;
+            overflow-y:hidden;
             &--text{
-                font-family: 'Oswald', sans-serif;
-                @include texts (20em, 500, black);
+                @include texts (14.5em, 500, transparent);
                 @include pad (30px 0 0 0);
+                font-family: 'Abril Fatface', sans-serif;
+                background-image: linear-gradient(to right, rgb(195, 195, 195), rgb(154, 154, 154));
+                background-clip: text;
+                -webkit-background-clip: text;
                 cursor: default;
             }
             &--img{
-                @include widhei (30em, 30em);
+                @include widhei (20em, 20em);
                 position: absolute;
-                top: 15%;
-                left: 33%;
+                top: 26%;
+                left: 37%;
                 cursor:default;
             }
         }
+    }
+    &-destacados{
+        
     }
 }

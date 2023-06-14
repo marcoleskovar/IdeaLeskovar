@@ -1,6 +1,6 @@
 .index{
     &-header{
-        @include widhei (100vw, auto);
+        @include widhei (100%, auto);
         &__right{
             @include widhei(33vw, auto);
             @include justali (start, center);
@@ -15,45 +15,54 @@
                 cursor: pointer;
                 z-index: 1100;
                 .bar{
-                    @include widhei (24px, 3px);
+                    @include widhei (26px, 3px);
                     @include display (blo);
-                    @include mar (4px 0);
-                    background-color: rgb(25, 25, 25);
+                    @include mar (5px 0);
+                    background-color: rgb(214, 214, 214);
                     -webkit-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
                 }
                 &.active{
                     & .bar:nth-child(1){
-                        background-color: rgb(223, 223, 223);
-                        transform: translateY(7px) rotate(45deg);
+                        transform: translateY(8px) rotate(45deg);
                     }
                     & .bar:nth-child(2){
                         opacity: 0;
                         transition: all 0.01s ease-in-out;
                     }
                     & .bar:nth-child(3){
-                        background-color: rgb(223, 223, 223);
-                        transform: translateY(-7px) rotate(-45deg);
+                        transform: translateY(-8px) rotate(-45deg);
                     }
                 }
             }
         }
         &__logo{
-            @include widhei (100vw, auto);
-            @include justali (center, center);
+            transition: 0.7s;
+            @include widhei (100vw, 60px);
+            @include justali (center, start);
             @include display (flex);
-            @include pad (12px 30px);
-            background-color: rgba(226, 226, 226, 0.483);
+            background-color: rgb(25, 25, 25, 0.483);
             backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: 0;
             z-index: 950;
+            &.appear{
+                transition: all 0.7s;
+                @include pad (12px 30px);
+            }
             &--link{
-                @include texts (1.3em, 500, rgb(25, 25, 25));
+                transition: all 0.4s;
+                @include texts (1.5em, 500, rgb(195, 195, 195));
+                font-family: 'Oswald', 'sans-serif';
                 text-decoration: none;
                 cursor: pointer;
                 z-index: 100000;
+                opacity: 0;
+                &.appear{
+                    transition: all 0.4s;
+                    opacity: 1;
+                }
             }
         }
         &__left{
@@ -74,7 +83,7 @@
                 }
             }
             &--lupa{
-                @include marpad (0 10px, 0 1px);
+                @include marpad (0 0 0 10px, 0 1px);
                 cursor: pointer;
                 & svg{
                     @include widhei (1.6em, 1.6em);
@@ -95,7 +104,7 @@
                 @include widhei (30vw, 100vh);
                 @include justali (start, center);
                 @include display (flex);
-                background-color: rgba(25, 25, 25, 0.872);
+                background-color: rgba(69, 69, 69, 0.872);
                 &--list{
                     @include widhei (100%, 100%);
                     @include justali (center, start);
@@ -108,7 +117,7 @@
                         @include justali (start, center);
                         @include display (flex);
                         @include pad (10px);
-                        max-height: 67px;
+                        line-height: 60px;
                         border-radius: 3px;
                         cursor: pointer;
                         transition: all 0.3s;
@@ -116,12 +125,13 @@
                             background-color: rgba(75, 75, 75, 0.446);
                             & a{
                                 transition: all 0.3s ease-in-out;
-                                transform: translateX(10px);
+                                transform: translateX(4px);
                                 color: rgb(96, 135, 233)
                             }
                         }
                         &--links{
-                            @include texts (2.4rem, 300, rgb(223, 223, 223));
+                            @include texts (1.5rem, 300, rgb(223, 223, 223));
+                            font-family: 'Oswald' , 'sans-serif';
                             text-decoration: none
                         }
                     }

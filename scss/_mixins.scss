@@ -15,6 +15,9 @@
     @else if $display == inblo{
         display: inline-block;
     }
+    @else if $display == grid{
+        display: grid;
+    }
 }
 
 /* FLEX DIRECTION */
