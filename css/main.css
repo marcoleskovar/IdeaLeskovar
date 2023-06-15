@@ -219,6 +219,9 @@ html {
   left: 37%;
   cursor: default;
 }
+.index-content {
+  background: linear-gradient(0deg, rgb(222, 0, 221) 20%, rgb(255, 111, 0) 60%, rgb(253, 106, 10) 72%, rgb(195, 195, 195) 100%);
+}
 .index-content__article {
   width: 100%;
   height: 100vh;
@@ -262,20 +265,20 @@ html {
 }
 
 #content {
-  /* &First{
-      background: radial-gradient(at right bottom, rgba(1, 117, 223, 1.0), rgba(255, 82, 1, 1.0), rgba(195,195,195) 90%);
-  }
-  &Second{
-      background: radial-gradient(at right top, rgba(1, 117, 223, 1.0), rgb(255, 1, 170), rgba(195,195,195) 90%);
-  } */
+  /*     &First{
+          background: radial-gradient(at right bottom, rgba(1, 117, 223, 1.0), rgba(255, 82, 1, 1.0), rgba(195,195,195) 90%);
+      }
+      &Second{
+          background: radial-gradient(at right top, rgba(1, 117, 223, 1.0), rgb(255, 1, 170), rgba(195,195,195) 90%);
+      } */
 }
 #contentFirst {
-  background: linear-gradient(-10deg, rgb(1, 117, 223), rgb(255, 82, 1), rgb(195, 195, 195) 90%);
+  /*         background: linear-gradient(-10deg, rgba(1, 117, 223), rgba(255, 82, 1), rgb(195, 195, 195)90%); */
 }
 #contentSecond {
   justify-content: end;
   align-items: center;
-  background: linear-gradient(45deg, rgb(255, 82, 1), rgb(192, 1, 255));
+  /*         background: linear-gradient(45deg, rgb(255, 82, 1), rgb(192, 1, 255)); */
 }
 #contentSecond .index-content__article--div {
   width: 85%;

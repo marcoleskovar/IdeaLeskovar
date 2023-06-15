@@ -30,6 +30,7 @@
         }
     }
     &-content{
+        background: linear-gradient(0deg, rgba(222,0,221,1) 20%, rgba(255,111,0,1) 60%, rgba(253,106,10,1) 72%, rgba(195,195,195,1) 100%);
         &__article{
             @include widhei(100%, 100vh);
             @include display (flex);
@@ -69,11 +70,11 @@
 }
 #content{
     &First{
-        background: linear-gradient(-10deg, rgba(1, 117, 223), rgba(255, 82, 1), rgb(195, 195, 195)90%);
+/*         background: linear-gradient(-10deg, rgba(1, 117, 223), rgba(255, 82, 1), rgb(195, 195, 195)90%); */
     }
     &Second{
         @include justali (end, center);
-        background: linear-gradient(45deg, rgb(255, 82, 1), rgb(192, 1, 255));
+/*         background: linear-gradient(45deg, rgb(255, 82, 1), rgb(192, 1, 255)); */
         .index-content__article--div{
             @include widhei(85%, 50%);
             @include justali (end, center);
@@ -105,7 +106,7 @@
             }
         }
     }
-    /* &First{
+/*     &First{
         background: radial-gradient(at right bottom, rgba(1, 117, 223, 1.0), rgba(255, 82, 1, 1.0), rgba(195,195,195) 90%);
     }
     &Second{
