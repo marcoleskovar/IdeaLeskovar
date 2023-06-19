@@ -1,4 +1,4 @@
-//Parallex main-text
+//Parallex METANOIA
 window.onscroll = () =>{
     const posicionScroll = window.scrollY
     const metanoiaTexto = document.querySelector('.index-main__div--text')

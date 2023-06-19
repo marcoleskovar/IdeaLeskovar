@@ -51,13 +51,18 @@
             }
             &--link{
                 @include texts (1.5em, 600, rgb(35, 35, 35));
-                font-family: 'Poppins', 'sans-serif';
+                font-family: 'Abril Fat Face', 'sans-serif';
                 text-decoration: none;
                 cursor: pointer;
                 z-index: 100000;
                 opacity: 0;
+                cursor: default;
                 &.appear{
+                    cursor: pointer;
                     opacity: 1;
+                }
+                &:hover{
+                    color: rgb(0, 94, 182);
                 }
             }
         }
@@ -147,7 +152,7 @@
 }
 #logoHeader2{
     @include texts (1.5em, 600, rgb(35, 35, 35));
-    font-family: 'Poppins', 'sans-serif';
+    font-family: 'Abril Fat Face', 'sans-serif';
     text-decoration: none;
     cursor: pointer;
     z-index: 100000;

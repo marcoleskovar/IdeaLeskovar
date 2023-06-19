@@ -15,7 +15,7 @@
             &--text{
                 @include texts (14.5em, 500, transparent);
                 font-family: 'Abril Fatface', sans-serif;
-                background: linear-gradient(270deg, #0A67FE, #45BCD3);
+                background: linear-gradient(270deg, rgb(35, 180, 209), rgb(10, 103, 254));
                 background-clip: text;
                 -webkit-background-clip: text;
                 cursor: default;

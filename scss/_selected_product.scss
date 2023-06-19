@@ -3,8 +3,8 @@
         @include widhei (100%, 100vh);
         background-color: rgb(207, 207, 207);
         &__sect{
+            @include widhei (100%, 100vh);
             @include marpad (0, 60px 0 0 0);
-            @include widhei (100%, auto);
             @include justali (center, center);
             @include display (flex);
             &--img{
