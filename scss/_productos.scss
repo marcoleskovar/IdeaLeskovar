@@ -1,0 +1,91 @@
+.productos{
+    &-main{
+        @extend .index-main;
+        @include widhei (100%, 100%);
+        @include justali (center, start);
+        background: linear-gradient(135deg, rgb(33, 33, 33), rgb(29, 29, 29));
+        &__sect{
+            @include widhei (100%, auto);
+            @include justali (center, center);
+            @include display (flex);
+            @include flex (wrap);
+            @include pad (60px 0 0 0 );
+            text-align: center;
+            position: relative;
+            &--div{
+                @include justali (center, center);
+                @include display (flex);
+                @include marpad (10px, 0);
+                &--card{
+                    @include widhei (20em, auto);
+                    @include display (flex);
+                    @include flex (col);
+                    border-radius: 10px;
+                    backdrop-filter: blur(20px);
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    &:hover{
+                        box-shadow: 7px 7px 20px -3px rgba(0,0,0,0.55);
+                    }
+                    &--img{
+                        @include widhei (100%, 100%);
+                        border-radius: 10px 10px 0 0
+                    }
+                    &--caption{
+                        @include widhei (100%, auto);
+                        @include marpad (0, 6px);   
+                        background-color: rgb(213, 213, 213);
+                        border-radius: 0 0 10px 10px;
+                        text-align: start;
+                        h3{
+                            font-family: 'Poppins';
+                            @include texts (1em, 500, rgb(23, 23, 23));
+                            @include mar (0)
+                        }
+                        h4{
+                            font-family: 'Poppins';
+                            @include texts (1.4em, 600, rgb(0, 89, 118));
+                            @include marpad (0, 3px)
+                        }
+                    }
+                }
+            }
+        }
+        &__filter{
+            @include widhei (auto, 100vh);
+            @include display (flex);
+            @include flex (col);
+            @include pad (70px 10px);
+            position: sticky;
+            top: 0;
+            right: 0;
+            background-color: rgb(179, 179, 179);
+            &--texto{
+                @include texts(1em, 500, rgb(0, 21, 103));
+                @include marpad (0, 5px);
+                font-family: 'Poppins';
+            }
+            &--min-max{
+                @include texts(0.8em, 500, rgb(42, 42, 42));
+                @include marpad (0, 5px);
+                font-family: 'Poppins';
+                &--form{
+                    @include display (flex);
+                    @include justali (center, center);
+                    &--symbol{
+                        @include texts (1em, 500, rgb(39, 39, 39));
+                        font-family: 'Poppins'
+                    }
+                    &--input{
+                        @include texts(1em, 500, rgb(30, 30, 30));
+                        @include marpad (0, 5px);
+                        font-family: 'Poppins';
+                        border: 1px solid rgb(84, 84, 84);
+                        border-radius: 5px;
+                    }
+                }
+            }
+            
+        }
+    }
+}

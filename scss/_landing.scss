@@ -3,34 +3,34 @@
         @include widhei (100%, 100vh);
         @include justali (center, center);
         @include display (flex);
-        background: linear-gradient(0deg, rgba(195,195,195) 0%, rgba(156,156,156) 5%, rgba(133,133,133) 12%, rgba(116,116,116) 17%, rgba(98,98,98) 26%, rgba(75,75,75) 36%, rgba(52,52,52) 58%, rgba(48,48,48) 71%, rgba(44,44,44) 90%, rgba(25,25,25) 100%);
+        background: linear-gradient(180deg, rgb(201, 201, 201), rgb(181, 181, 181));
         &__div{
             @include widhei (100%, 100vh);
             @include display (flex);
             @include justali (center, center);
+            @include pad (60px 0 0 0);
             text-align: center;
             position: relative;
             overflow-y:hidden;
             &--text{
                 @include texts (14.5em, 500, transparent);
-                @include pad (30px 0 0 0);
                 font-family: 'Abril Fatface', sans-serif;
-                background-image: linear-gradient(to right, rgb(185, 185, 185),rgb(124, 124, 124));
+                background: linear-gradient(270deg, #0A67FE, #45BCD3);
                 background-clip: text;
                 -webkit-background-clip: text;
                 cursor: default;
             }
             &--img{
-                @include widhei (20em, 20em);
+                @include widhei (17em, 17em);
                 position: absolute;
-                top: 26%;
+                top: 32%;
                 left: 37%;
                 cursor:default;
             }
         }
     }
     &-content{
-        background: linear-gradient(0deg, rgb(110, 0, 110)22%, rgba(255,111,0,1) 60%, rgba(253,106,10,1) 62%, rgba(195,195,195,1) 100%);
+        background: linear-gradient(0deg, rgb(110, 0, 110)22%, rgba(255,111,0,1) 60%, rgba(253,106,10,1) 62%, rgb(181, 181, 181) 100%);
         &__article{
             @include widhei(100%, 100vh);
             @include display (flex);
@@ -45,7 +45,7 @@
                     &-img{
                         @include widhei (60%, 100%);
                         @include display (flex);
-                        @include justali (space-between, center);
+                        @include justali (end, center);
                         position: relative;
                         border-radius: 0 30px 30px 0;
                         background-color: rgba(255, 255, 255, 0.124);
@@ -54,14 +54,6 @@
                         transition: all 0.5s ease-in-out;
                         &:hover{
                             @include widhei (64%, 100%);
-                        }
-                        &--subpage{
-                            @include widhei (100%, auto);
-                            @include justali (center, center);
-                            @include display (flex);
-                            @include texts (2.5em, 500, white);
-                            font-family: 'Poppins';
-                            text-align: center
                         }
                         &--picture{
                             @include hei(100%);

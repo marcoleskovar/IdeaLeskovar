@@ -1,0 +1,49 @@
+.selected{
+    &-main{
+        @include widhei (100%, 100vh);
+        background-color: rgb(207, 207, 207);
+        &__sect{
+            @include marpad (0, 60px 0 0 0);
+            @include widhei (100%, auto);
+            @include justali (center, center);
+            @include display (flex);
+            &--img{
+                @include widhei (50%, auto);
+                @include display (flex);
+                @include justali (center, center);
+                &--product{
+                    @include widhei (52%, auto);
+                }
+            }
+            &--info{
+                @include widhei (50%, auto);
+                @include display (flex);
+                @include flex(col);
+                @include justali (center, start);
+                text-align: start;
+                &--name{
+                    @include texts (3em, 500, rgb(183, 47, 47));
+                    font-family: 'Poppins';
+                }
+                &--price{
+                    @include texts (2em, 600, rgb(25, 25, 25));
+                    font-family: 'Poppins';
+                }
+                &--add{
+                    @include texts (1.2em, 600, rgb(213, 213, 213));
+                    @include display (flex);
+                    @include justali (center, center);
+                    @include marpad (40px 0 0 0, 10px);
+                    font-family: 'Poppins';
+                    background-color: rgb(0, 94, 255);
+                    border: none;
+                    border-radius: 8px;
+                    & svg{
+                        @include widhei (1.4em, auto);
+                        @include mar (0 0 0 10px);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -18,13 +18,12 @@
                     @include widhei (26px, 3px);
                     @include display (blo);
                     @include mar (5px 0);
-                    background-color: rgb(214, 214, 214);
+                    background-color: rgb(35, 35, 35);
                     -webkit-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
                 }
                 &.active{
                     & .bar:nth-child(1){
-                        background-color: rgb(47, 47, 47);
                         transform: translateY(8px) rotate(45deg);
                     }
                     & .bar:nth-child(2){
@@ -32,37 +31,32 @@
                         transition: all 0.01s ease-in-out;
                     }
                     & .bar:nth-child(3){
-                        background-color: rgb(47, 47, 47);
                         transform: translateY(-8px) rotate(-45deg);
                     }
                 }
             }
         }
         &__logo{
-            transition: 0.7s;
             @include widhei (100vw, 60px);
             @include justali (center, start);
             @include display (flex);
-            background-color: rgb(25, 25, 25, 0.483);
+            background-color: rgba(194, 194, 194, 0.483);
             backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: 0;
             z-index: 950;
             &.appear{
-                transition: all 0.7s;
                 @include pad (12px 30px);
             }
             &--link{
-                transition: all 0.4s;
-                @include texts (1.5em, 600, rgb(195, 195, 195));
-                font-family: 'Abril Fat Face', 'sans-serif';
+                @include texts (1.5em, 600, rgb(35, 35, 35));
+                font-family: 'Poppins', 'sans-serif';
                 text-decoration: none;
                 cursor: pointer;
                 z-index: 100000;
                 opacity: 0;
                 &.appear{
-                    transition: all 0.4s;
                     opacity: 1;
                 }
             }
@@ -80,7 +74,7 @@
                 cursor: pointer;
                 & svg{
                     @include widhei (1.8em, 1.8em);
-                    color: rgb(214, 214, 214);
+                    color: rgb(35, 35, 35);
                     transform: scaleX(-1);
                 }
                 &:hover{
@@ -102,7 +96,7 @@
                 @include widhei (30vw, 100vh);
                 @include justali (start, center);
                 @include display (flex);
-                background-color: rgba(101, 101, 101, 0.872);
+                background-color: rgba(162, 162, 162, 0.549);
                 &--list{
                     @include widhei (100%, 100%);
                     @include justali (center, start);
@@ -114,7 +108,6 @@
                         @include widhei (100%, auto);
                         @include justali (start, center);
                         @include display (flex);
-                        @include pad (10px);
                         line-height: 60px;
                         border-radius: 3px;
                         cursor: pointer;
@@ -124,12 +117,14 @@
                             & a{
                                 transition: all 0.3s ease-in-out;
                                 transform: translateX(4px);
-                                color: rgb(39, 39, 39)
+                                color: rgb(35, 35, 35)
                             }
                         }
                         &--links{
-                            @include texts (1.5rem, 300, rgb(47, 47, 47));
-                            font-family: 'Poppins' , 'sans-serif';
+                            @include texts (1.5rem, 400, rgb(47, 47, 47));
+                            @include widhei(100%, 100%);
+                            @include pad (10px);
+                            font-family: 'Poppins', 'sans-serif';
                             text-decoration: none
                         }
                     }
@@ -137,4 +132,24 @@
             }
         }
     }
+}
+#divLogoHeader2{
+    @include widhei (100vw, 60px);
+    @include justali (center, start);
+    @include pad (12px 30px);
+    @include display (flex);
+    background-color: rgba(194, 194, 194, 0.483);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 950;
+}
+#logoHeader2{
+    @include texts (1.5em, 600, rgb(35, 35, 35));
+    font-family: 'Poppins', 'sans-serif';
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 100000;
+    opacity: 1;
 }
