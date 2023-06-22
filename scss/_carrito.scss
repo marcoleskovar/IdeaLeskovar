@@ -2,53 +2,65 @@
     &-main{
         @include widhei (100%, 100%);
         @include display (flex);
-        @include flex (col);
-        @include justali (center, center);
-        @include pad (60px 0 0 0);
+        @include justali (space-between, start);
+        @include pad (70px 50px 0 50px);
         min-height: 100vh;
         background-color: rgb(197, 197, 197);
         &__sect{
             @include widhei (80%, 100%);
+            @include justali (start, center);
             @include display (flex);
             @include flex (col);
-            @include justali (start, center);
+            @include marpad (0, 0 20px 30px 0);
             &--list{
                 @include widhei (100%, 100%);
                 @include display (flex);
                 @include flex (col);
-                @include marpad (0, 3px);
+                @include marpad (0, 0 3px 3px 3px);
                 justify-content: center;
                 list-style: none;
                 &--product{
                     @include display (flex);
                     @include justali (space-between, start);
+                    @include mar(0 2px 4px 2px);
                     background-color: rgb(219, 219, 219);
                     border: 1px solid rgba(174, 174, 174, 0.633);
                     border-radius: 10px;
-                    @include mar(2px);
                     &--info{
+                        @include display (flex);
+                        min-height: 100px;
                         &--img{
                             @include widhei (9em, auto);
                             @include marpad (0 15px 0 0, 0);
                             border-radius: 10px 0 0 10px
                         }
-                        @include display (flex);
-                        @include justali (center, start);
-                        min-height: 100px;
                         &--text{
+                            @include widhei (auto, auto);
+                            @include display (flex);
+                            @include flex (col);
                             &--name{
-                                @include texts (1.3em, 400, rgb(45, 45, 45));
+                                @include texts (1em, 400, rgb(45, 45, 45));
                                 @include pad(20px 0 0 0);
                                 font-family: 'Poppins';
                             }
                             &--price{
-                                @include texts (1.5em, 500, rgb(21, 21, 21));
+                                @include texts (1.3em, 500, rgb(21, 21, 21));
                                 font-family: 'Poppins';
                             }
                             &--cantidad{
-                                @include texts (1em, 500, rgb(21, 21, 21));
-                                @include mar (30px 0 0 0);
+                                @include texts (0.9em, 500, rgb(21, 21, 21));
+                                @include marpad (5px 0 0 0, 0 0 10px 0);
                                 font-family: 'Poppins';
+                            }
+                            &--div{
+                                @include display (flex);
+                                @include justali (start, center);
+                                &--buy{
+                                    @include texts (0.9em, 500, rgb(9, 77, 172));
+                                    @include marpad (0, 10px 0);
+                                    font-family: 'Poppins';
+                                    cursor: pointer;
+                                }
                             }
                         }
                     }
@@ -62,19 +74,58 @@
                     }
                 }
             }
-            &--total{
-                @include display (flex);
-                @include justali (center, center);
+        }
+        &__final{
+            @include justali (center, center);
+            @include display (flex);
+            @include flex (col);
+            @include marpad (0, 14px);
+            min-width: 400px;
+            position: sticky;
+            top: 70px;
+            left: 0;
+            border-radius: 10px;
+            background-color: rgb(219, 219, 219);
+            &--resumen{
                 @include widhei (100%, auto);
-                @include texts (1em, 500, rgb(0, 49, 172));
-                @include pad (5px 0 20px 0);
+                @include pad (0 0 10px 0);
+                @include texts (1em, 500, rgb(27, 27, 27));
                 font-family: 'Poppins';
+                text-align: start;
+                border-bottom: 1px solid rgb(113, 113, 113);
+            }
+            &--productos{
+                @include widhei (100%, auto);
+                @include marpad (0, 30px 0 5px 0);
+                @include texts (0.9em, 400, rgb(40, 40, 40));
+                font-family: 'Poppins';
+                text-align: start;
+            }
+            &--total{
+                @include widhei (100%, auto);
+                @include justali (space-between, center);
+                @include display (flex);
+                @include marpad (15px 0, 0);
+                &--word{
+                    @include widhei (100%, auto);
+                    @include display (flex);
+                    @include justali (start, center);
+                    @include texts (1em, 600, rgb(18, 18, 18));
+                    font-family: 'Poppins';
+                }
+                &--cash{
+                    @include widhei (100%, auto);
+                    @include display (flex);
+                    @include justali (end, center);
+                    @include texts (1em, 600, rgb(45, 149, 34));
+                    font-family: 'Poppins';
+                }
             }
             &--buy{
                 @include widhei (100%, auto);
-                @include texts (1em, 500, rgb(199, 199, 199));
+                @include texts (1em, 400, rgb(215, 215, 215));
+                @include marpad (10px 5px 3px 5px, 5px);
                 font-family: 'Poppins';
-                @include mar (10px 0 0 0);
                 border-radius: 10px;
                 border: none;
                 background-color: rgb(9, 77, 172);
