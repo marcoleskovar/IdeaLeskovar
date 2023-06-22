@@ -95,7 +95,6 @@ const verProducto = (id) =>{
     location.href = '../views/selected_product.html'
 }
 //VER PRODUCTO EN DETALLE = END
-////onClick='agregarProducto(${seleccionado.id}' id="agregarCarrito"
 
 
 //RENDERIZAR PRODUCTO ELEGIDO = START
@@ -107,7 +106,7 @@ const renderProduct = () =>{
 <div class="selected-main__sect--info">
     <h1 class="selected-main__sect--info--name">${seleccionado.producto}</h1>
     <h2 class="selected-main__sect--info--price">${'$' + seleccionado.precio}</h2>
-    <button class="selected-main__sect--info--add">
+    <button class="selected-main__sect--info--add" onclick="agregarProducto(${seleccionado.id})" id="agregarCarrito">
         Agregar al carrito
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
@@ -117,3 +116,28 @@ const renderProduct = () =>{
 document.getElementById('productoSeleccionado').innerHTML = contenido
 }
 //RENDERIZAR PRODUCTO ELEGIDO = END
+
+
+//GUARDAR ARRAY DE PRODUCTOS EN EL STORAGE = START
+const guardarCarrito = (carrito) =>{
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+//GUARDAR ARRAY DE PRODUCTOS EN EL STORAGE = END
+
+
+//IMPORTAR ARRAY DE PRODUCTOS DEL STORAGE = START
+const importarCarrito = () =>{
+    return JSON.parse(localStorage.getItem('carrito')) || []
+}
+//IMPORTAR ARRAY DE PRODUCTOS DEL STORAGE = END
+
+
+//GUARDAR PRODUCTO DE CARRITO = START
+const agregarProducto = (id) =>{
+    const productos = cargarProducto()
+    const agregado = productos.find((elemento) => elemento.id == id)
+    const carrito = importarCarrito ()
+    carrito.push(agregado)
+    guardarCarrito(carrito)
+}
+//GUARDAR PRODUCTO DE CARRITO = END

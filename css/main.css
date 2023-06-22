@@ -122,7 +122,7 @@ html {
   transform: scaleX(-1);
 }
 .index-header__left--carrito:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .index-header__navbar {
   transition: all 0.4s ease;
@@ -207,6 +207,10 @@ html {
   cursor: pointer;
   z-index: 100000;
   opacity: 1;
+  transition: all 0.2s;
+}
+#logoHeader2:hover {
+  color: rgb(0, 94, 182);
 }
 
 .index-main, .productos-main {
@@ -245,6 +249,7 @@ html {
   top: 32%;
   left: 37%;
   cursor: default;
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.551));
 }
 .index-content {
   background: linear-gradient(0deg, rgb(110, 0, 110) 22%, rgb(255, 111, 0) 60%, rgb(253, 106, 10) 62%, rgb(181, 181, 181) 100%);
@@ -706,7 +711,7 @@ html {
   align-items: center;
   font-size: 1em;
   font-weight: 600;
-  color: rgb(45, 149, 34);
+  color: rgb(17, 153, 2);
   font-family: "Poppins";
 }
 .carrito-main__final--buy {
@@ -721,6 +726,9 @@ html {
   border-radius: 10px;
   border: none;
   background-color: rgb(9, 77, 172);
+}
+.carrito-main__final--buy:hover {
+  background-color: rgb(9, 71, 156);
 }
 
 /*# sourceMappingURL=main.css.map */

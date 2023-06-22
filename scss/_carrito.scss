@@ -117,7 +117,7 @@
                     @include widhei (100%, auto);
                     @include display (flex);
                     @include justali (end, center);
-                    @include texts (1em, 600, rgb(45, 149, 34));
+                    @include texts (1em, 600, rgb(17, 153, 2));
                     font-family: 'Poppins';
                 }
             }
@@ -129,6 +129,9 @@
                 border-radius: 10px;
                 border: none;
                 background-color: rgb(9, 77, 172);
+                &:hover{
+                    background-color: rgb(9, 71, 156);
+                }
             }
         }
     }

@@ -83,7 +83,7 @@
                     transform: scaleX(-1);
                 }
                 &:hover{
-                    transform: scale(1.1)
+                    transform: scale(1.05)
                 }
             }
         }
@@ -157,4 +157,8 @@
     cursor: pointer;
     z-index: 100000;
     opacity: 1;
+    transition: all 0.2s;
+    &:hover{
+        color: rgb(0, 94, 182);
+    }
 }
