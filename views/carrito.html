@@ -22,11 +22,7 @@
         </div>
         <div class="index-header__left">
             <div class="index-header__left--carrito">
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                    </svg>
-                </a>
+                <a href="#" id="carritoLink"></a>
             </div>
         </div>
         <nav class="index-header__navbar">
@@ -46,106 +42,12 @@
         </nav>
     </header>
     <main class="carrito-main">
-        <section class="carrito-main__sect">
-            <ul class="carrito-main__sect--list">
-                <li class="carrito-main__sect--list--product">
-                    <div class="carrito-main__sect--list--product--info">
-                        <img class="carrito-main__sect--list--product--info--img" src="../img/prod-3.webp">
-                        <div class="carrito-main__sect--list--product--info--text">
-                            <h2 class="carrito-main__sect--list--product--info--text--name">Nombre del Producto</h2>
-                            <h3 class="carrito-main__sect--list--product--info--text--price">$1000 (precioUnidad)</h3>
-                            <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
-                            <div class="carrito-main__sect--list--product--info--text--div">
-                                <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="carrito-main__sect--list--product--trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </li>
-                <li class="carrito-main__sect--list--product">
-                    <div class="carrito-main__sect--list--product--info">
-                        <img class="carrito-main__sect--list--product--info--img" src="../img/prod-3.webp">
-                        <div class="carrito-main__sect--list--product--info--text">
-                            <h2 class="carrito-main__sect--list--product--info--text--name">Nombre del Producto</h2>
-                            <h3 class="carrito-main__sect--list--product--info--text--price">$1000 (precioUnidad)</h3>
-                            <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
-                            <div class="carrito-main__sect--list--product--info--text--div">
-                                <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="carrito-main__sect--list--product--trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </li>
-                <li class="carrito-main__sect--list--product">
-                    <div class="carrito-main__sect--list--product--info">
-                        <img class="carrito-main__sect--list--product--info--img" src="../img/prod-3.webp">
-                        <div class="carrito-main__sect--list--product--info--text">
-                            <h2 class="carrito-main__sect--list--product--info--text--name">Nombre del Producto</h2>
-                            <h3 class="carrito-main__sect--list--product--info--text--price">$1000 (precioUnidad)</h3>
-                            <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
-                            <div class="carrito-main__sect--list--product--info--text--div">
-                                <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="carrito-main__sect--list--product--trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </li>
-                <li class="carrito-main__sect--list--product">
-                    <div class="carrito-main__sect--list--product--info">
-                        <img class="carrito-main__sect--list--product--info--img" src="../img/prod-3.webp">
-                        <div class="carrito-main__sect--list--product--info--text">
-                            <h2 class="carrito-main__sect--list--product--info--text--name">Nombre del Producto</h2>
-                            <h3 class="carrito-main__sect--list--product--info--text--price">$1000 (precioUnidad)</h3>
-                            <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
-                            <div class="carrito-main__sect--list--product--info--text--div">
-                                <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="carrito-main__sect--list--product--trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </li>
-                <li class="carrito-main__sect--list--product">
-                    <div class="carrito-main__sect--list--product--info">
-                        <img class="carrito-main__sect--list--product--info--img" src="../img/prod-3.webp">
-                        <div class="carrito-main__sect--list--product--info--text">
-                            <h2 class="carrito-main__sect--list--product--info--text--name">Nombre del Producto</h2>
-                            <h3 class="carrito-main__sect--list--product--info--text--price">$1000 (precioUnidad)</h3>
-                            <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
-                            <div class="carrito-main__sect--list--product--info--text--div">
-                                <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <svg class="carrito-main__sect--list--product--trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </li>
-            </ul>
+        <section class="carrito-main__sect" id="sectionListaDeCarrito">
+            <ul class="carrito-main__sect--list" id="listaDeCarrito"></ul>
         </section>
-        <section class="carrito-main__final">
-            <div class="carrito-main__final--resumen">Resumen de compra</div>
-            <div class="carrito-main__final--productos">Productos (numTotalDeProd)</div>
-            <div class="carrito-main__final--total">
-                <div class="carrito-main__final--total--word">Total</div>
-                <div class="carrito-main__final--total--cash">$2500</div>
-            </div>
-            <button class="carrito-main__final--buy">Comprar Carrito</button>
-        </section>
+        <section class="carrito-main__final" id="resumenDeCompra"></section>
     </main>
     <script src="../js/funciones.js"></script>
-<!--     <script src="../js/selected_product.js"></script> -->
+    <script src="../js/carrito.js"></script>
 </body>
 </html>

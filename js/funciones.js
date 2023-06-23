@@ -118,7 +118,7 @@ document.getElementById('productoSeleccionado').innerHTML = contenido
 //RENDERIZAR PRODUCTO ELEGIDO = END
 
 
-//GUARDAR ARRAY DE PRODUCTOS EN EL STORAGE = START
+//GUARDAR ARRAY DE PRODUCTOS EN EL STORAGE (CARRITO) = START
 const guardarCarrito = (carrito) =>{
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
@@ -129,7 +129,7 @@ const guardarCarrito = (carrito) =>{
 const importarCarrito = () =>{
     return JSON.parse(localStorage.getItem('carrito')) || []
 }
-//IMPORTAR ARRAY DE PRODUCTOS DEL STORAGE = END
+//IMPORTAR ARRAY DE PRODUCTOS DEL STORAGE (CARRITO) = END
 
 
 //GUARDAR PRODUCTO DE CARRITO = START
@@ -139,5 +139,106 @@ const agregarProducto = (id) =>{
     const carrito = importarCarrito ()
     carrito.push(agregado)
     guardarCarrito(carrito)
+    badgeCarrito()
 }
 //GUARDAR PRODUCTO DE CARRITO = END
+
+
+//RENDERIZAR CARRITO = START
+const contenedorLista = document.getElementById('listaDeCarrito')
+const contenedorResumen = document.getElementById('resumenDeCompra')
+const sectionLista = document.getElementById('sectionListaDeCarrito')
+const renderCarrito = () =>{
+    const productosDelCarrito = importarCarrito()
+    let listaDeCarrito = ''
+    for(const elegido of productosDelCarrito){
+        listaDeCarrito += `<li class="carrito-main__sect--list--product">
+        <div class="carrito-main__sect--list--product--info">
+            <img class="carrito-main__sect--list--product--info--img" src="${elegido.imagen}">
+            <div class="carrito-main__sect--list--product--info--text">
+                <h2 class="carrito-main__sect--list--product--info--text--name" onclick="verProducto(${elegido.id})">${elegido.producto}</h2>
+                <h3 class="carrito-main__sect--list--product--info--text--price">${'$' + elegido.precio}</h3>
+                <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
+                <div class="carrito-main__sect--list--product--info--text--div">
+                    <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
+                </div>
+            </div>
+        </div>
+        <svg class="carrito-main__sect--list--product--trash" onclick="eliminarProducto(${elegido.id})" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+        </svg>
+    </li>`
+    }
+
+    const precioFinal = `<div class="carrito-main__final--resumen">Resumen de compra</div>
+    <div class="carrito-main__final--productos">Productos (${cantidadProductosTotal()})</div>
+    <div class="carrito-main__final--total">
+        <div class="carrito-main__final--total--word">Total</div>
+        <div class="carrito-main__final--total--cash">${'$'+precioProductosTotal()}</div>
+    </div>
+    <button class="carrito-main__final--buy">Comprar Carrito</button>`
+
+    let contenidoVacio = ''
+    if (productosDelCarrito.length <= 0){
+        contenedorResumen.style.display = 'none'
+        sectionLista.style.width = '100%'
+        sectionLista.style.padding = '0'
+        contenidoVacio = `<div class="carrito-main__sect--vacio">
+        <h2 class="carrito-main__sect--vacio--ups">
+            Parece que aún no hay productos agregados en el carrito
+        </h2>
+        <h3 class="carrito-main__sect--vacio--comprar">
+            ¡Para agregar productos visita nuestro <a href="../views/productos.html" class="carrito-main__sect--vacio--comprar--catalogo">catalogo</a>!
+        </h3>
+    </div>`
+        sectionLista.innerHTML = contenidoVacio
+    }else{
+        contenedorLista.innerHTML = listaDeCarrito
+        contenedorResumen.innerHTML = precioFinal
+    }
+}
+//RENDERIZAR CARRITO = END
+
+
+//ELIMINAR PRODUCTO DEL CARRITO = START
+const eliminarProducto = (id) =>{
+    const carrito = importarCarrito ()
+    const elegido = carrito.filter (item => item.id != id)
+    importarCarrito(elegido)
+}
+//ELIMINAR PRODUCTO DEL CARRITO = END
+
+
+//CANTIDAD TOTAL DE PRODUCTOS = START
+const cantidadProductosTotal = () =>{
+    const carrito = importarCarrito ()
+    return carrito.length
+}
+//CANTIDAD TOTAL DE PRODUCTOS = END
+
+
+//PRECIO TOTAL DE PRODUCTOS = START
+const precioProductosTotal = () =>{
+    const carrito = importarCarrito ()
+    return carrito.reduce((acumulador, elemento) => acumulador += elemento.precio, 0)
+}
+//PRECIO TOTAL DE PRODUCTOS = END
+
+
+//BADGE ICON CARRITO = START
+const badgeCarrito = () =>{
+    const badge = document.getElementById('carritoLink')
+    contenido = `<span class="badge">${cantidadProductosTotal()}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>`
+    if (cantidadProductosTotal() <= 0){
+        contenido = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+        </svg>`
+    }
+    badge.innerHTML = contenido
+}
+badgeCarrito()
+//BADGE ICON CARRITO = END

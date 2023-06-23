@@ -42,6 +42,7 @@
                                 @include texts (1em, 400, rgb(45, 45, 45));
                                 @include pad(20px 0 0 0);
                                 font-family: 'Poppins';
+                                cursor: pointer
                             }
                             &--price{
                                 @include texts (1.3em, 500, rgb(21, 21, 21));
@@ -70,6 +71,33 @@
                         cursor: pointer;
                         & path{
                             color: rgb(141, 10, 10);
+                        }
+                    }
+                }
+            }
+            &--vacio{
+                @include widhei (100%, 100%);
+                @include display (flex);
+                @include flex (col);
+                position: fixed;
+                top: 30%;
+                left: 0;
+                text-align: center;
+                &--ups{
+                    @include texts (1.4em, 400, rgb(33, 33, 33));
+                    font-family: 'Poppins'
+                }
+                &--comprar{
+                    @include texts (1.2em, 400, rgb(57, 57, 57));
+                    @include pad (15px 0 0 0);
+                    font-family: 'Poppins';
+                    &--catalogo{
+                        @include texts (1em, 500, rgb(215, 51, 119));
+                        font-family: 'Poppins';
+                        text-decoration: none;
+                        cursor: pointer;
+                        &:hover{
+                            @include texts (1em, 500, rgb(176, 0, 73));
                         }
                     }
                 }

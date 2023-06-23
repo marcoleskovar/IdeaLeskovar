@@ -82,8 +82,17 @@
                     color: rgb(35, 35, 35);
                     transform: scaleX(-1);
                 }
-                &:hover{
-                    transform: scale(1.05)
+                & .badge{
+                    @include pad (3px 4px );
+                    @include texts (0.7em, 600, rgb(230, 230, 230));
+                    font-family: 'Poppins';
+                    text-align: center;
+                    border-radius: 10px ;
+                    background-color: rgb(171, 0, 0);
+                    position: absolute;
+                    top: 18px;
+                    right: 60px;
+                    min-width: 30px;
                 }
             }
         }
