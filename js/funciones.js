@@ -203,9 +203,11 @@ const renderCarrito = () =>{
 
 //ELIMINAR PRODUCTO DEL CARRITO = START
 const eliminarProducto = (id) =>{
-    const carrito = importarCarrito ()
-    const elegido = carrito.filter (item => item.id != id)
-    importarCarrito(elegido)
+    const carrito = importarCarrito()
+    const elegido = carrito.filter((item) => item.id != id)
+    guardarCarrito(elegido)
+    renderCarrito()
+    badgeCarrito()
 }
 //ELIMINAR PRODUCTO DEL CARRITO = END
 
