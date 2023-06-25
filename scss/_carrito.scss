@@ -49,9 +49,21 @@
                                 font-family: 'Poppins';
                             }
                             &--cantidad{
-                                @include texts (0.9em, 500, rgb(21, 21, 21));
-                                @include marpad (5px 0 0 0, 0 0 10px 0);
-                                font-family: 'Poppins';
+                                @include widhei (30%, auto);
+                                @include justali (center, center);
+                                @include display (flex);
+                                &--input{
+                                    @include widhei (100%, auto);
+                                    @include display (flex);
+                                    @include justali (center, center);
+                                    @include pad (2px 4px);
+                                    @include texts (0.9em, 500, rgb(21, 21, 21));
+                                    font-family: 'Poppins';
+                                    text-align: center;
+                                    background-color: rgb(255, 255, 255);
+                                    border: 1px solid rgb(0, 64, 203);
+                                    border-radius: 5px
+                                }
                             }
                             &--div{
                                 @include display (flex);

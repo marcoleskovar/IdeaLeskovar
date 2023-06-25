@@ -132,14 +132,31 @@ const importarCarrito = () =>{
 //IMPORTAR ARRAY DE PRODUCTOS DEL STORAGE (CARRITO) = END
 
 
+//SABER SI HAY PRODUCTO EN EL CARRITO = START
+const estaEnElCarrito = (id) =>{
+    const carrito = importarCarrito ()
+    return carrito.some ((elemento) =>elemento.id == id)
+}
+//SABER SI HAY PRODUCTO EN EL CARRITO = END
+
+
 //GUARDAR PRODUCTO DE CARRITO = START
 const agregarProducto = (id) =>{
-    const productos = cargarProducto()
-    const agregado = productos.find((elemento) => elemento.id == id)
     const carrito = importarCarrito ()
-    carrito.push(agregado)
+    const productos = cargarProducto()
+    /* const inputCantidad = document.getElementById("inputCantidad");
+    const cantidad = parseInt(inputCantidad.value); */
+    if (estaEnElCarrito(id)){
+        let posicion = carrito.findIndex((item) => item.id === id)
+        carrito[posicion].cantidad += 1
+    }else{
+        const agregado = productos.find((elemento) => elemento.id == id)
+        agregado.cantidad = 1
+        carrito.push(agregado)
+    }
     guardarCarrito(carrito)
     badgeCarrito()
+    renderCarrito ()
 }
 //GUARDAR PRODUCTO DE CARRITO = END
 
@@ -152,13 +169,17 @@ const renderCarrito = () =>{
     const productosDelCarrito = importarCarrito()
     let listaDeCarrito = ''
     for(const elegido of productosDelCarrito){
-        listaDeCarrito += `<li class="carrito-main__sect--list--product">
+        listaDeCarrito += `                <li class="carrito-main__sect--list--product">
         <div class="carrito-main__sect--list--product--info">
             <img class="carrito-main__sect--list--product--info--img" src="${elegido.imagen}">
             <div class="carrito-main__sect--list--product--info--text">
                 <h2 class="carrito-main__sect--list--product--info--text--name" onclick="verProducto(${elegido.id})">${elegido.producto}</h2>
-                <h3 class="carrito-main__sect--list--product--info--text--price">${'$' + elegido.precio}</h3>
-                <h4 class="carrito-main__sect--list--product--info--text--cantidad">Cantidad (cantidad que pediste)</h4>
+                <h3 class="carrito-main__sect--list--product--info--text--price">${'$' + (elegido.cantidad * elegido.precio)}</h3>
+                <div class="carrito-main__sect--list--product--info--text--cantidad">
+                    <button class="carrito-main__sect--list--product--info--text--cantidad" id="restarProducto">-</button>
+                    <input type="number" class="carrito-main__sect--list--product--info--text--cantidad--input" value="${elegido.cantidad}" onchange="actualizarCantidad(${elegido.id})" id="inputCantidad-${elegido.id}"></input>
+                    <button class="carrito-main__sect--list--product--info--text--cantidad" id="sumarProducto">+</button>
+                </div>
                 <div class="carrito-main__sect--list--product--info--text--div">
                     <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
                 </div>
@@ -201,6 +222,18 @@ const renderCarrito = () =>{
 //RENDERIZAR CARRITO = END
 
 
+//ACTUALIZAR CANTIDAD = START
+const actualizarCantidad = (id) => {
+    const carrito = importarCarrito();
+    const posicion = carrito.findIndex((item) => item.id === id);
+    const inputValue = document.getElementById(`inputCantidad-${id}`)
+    carrito[posicion].cantidad = parseInt(inputValue.value);
+    guardarCarrito(carrito);
+    renderCarrito();
+};
+//ACTUALIZAR CANTIDAD = END
+
+
 //ELIMINAR PRODUCTO DEL CARRITO = START
 const eliminarProducto = (id) =>{
     const carrito = importarCarrito()
@@ -215,7 +248,7 @@ const eliminarProducto = (id) =>{
 //CANTIDAD TOTAL DE PRODUCTOS = START
 const cantidadProductosTotal = () =>{
     const carrito = importarCarrito ()
-    return carrito.length
+    return carrito.reduce((acumulador, item) => acumulador += item.cantidad, 0)
 }
 //CANTIDAD TOTAL DE PRODUCTOS = END
 
@@ -223,7 +256,7 @@ const cantidadProductosTotal = () =>{
 //PRECIO TOTAL DE PRODUCTOS = START
 const precioProductosTotal = () =>{
     const carrito = importarCarrito ()
-    return carrito.reduce((acumulador, elemento) => acumulador += elemento.precio, 0)
+    return carrito.reduce((acumulador, elemento) => acumulador += (elemento.precio * elemento.cantidad), 0)
 }
 //PRECIO TOTAL DE PRODUCTOS = END
 

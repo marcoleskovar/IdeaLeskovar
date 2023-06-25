@@ -629,12 +629,27 @@ html {
   font-family: "Poppins";
 }
 .carrito-main__sect--list--product--info--text--cantidad {
+  width: 30%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.carrito-main__sect--list--product--info--text--cantidad--input {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 4px;
   font-size: 0.9em;
   font-weight: 500;
   color: rgb(21, 21, 21);
-  margin: 5px 0 0 0;
-  padding: 0 0 10px 0;
   font-family: "Poppins";
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 64, 203);
+  border-radius: 5px;
 }
 .carrito-main__sect--list--product--info--text--div {
   display: flex;
