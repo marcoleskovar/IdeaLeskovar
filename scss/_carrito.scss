@@ -49,9 +49,11 @@
                                 font-family: 'Poppins';
                             }
                             &--cantidad{
-                                @include widhei (30%, auto);
+                                @include widhei (50%, auto);
+                                @include justali (center, center);
                                 @include justali (center, center);
                                 @include display (flex);
+                                @include mar (10px 0 0 0);
                                 &--input{
                                     @include widhei (100%, auto);
                                     @include display (flex);
@@ -60,19 +62,20 @@
                                     @include texts (0.9em, 500, rgb(21, 21, 21));
                                     font-family: 'Poppins';
                                     text-align: center;
-                                    background-color: rgb(255, 255, 255);
+                                    background-color: transparent;
                                     border: 1px solid rgb(0, 64, 203);
-                                    border-radius: 5px
+                                    border-radius: 5px;
+                                    &::-webkit-inner-spin-button, .carrito-main__sect--list--product--info--text--cantidad--input::-webkit-outer-spin-button{
+                                        -webkit-appearance: none;
+                                    }
                                 }
-                            }
-                            &--div{
-                                @include display (flex);
-                                @include justali (start, center);
-                                &--buy{
-                                    @include texts (0.9em, 500, rgb(9, 77, 172));
-                                    @include marpad (0, 10px 0);
+                                &--buttons{
+                                    @include widhei (auto, auto);
+                                    @include pad(2px 5px);
+                                    @include texts (1.2em, 700, rgb(0, 64, 203));
                                     font-family: 'Poppins';
-                                    cursor: pointer;
+                                    background-color: transparent;
+                                    border: none;
                                 }
                             }
                         }

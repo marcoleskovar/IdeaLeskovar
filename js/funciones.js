@@ -176,12 +176,9 @@ const renderCarrito = () =>{
                 <h2 class="carrito-main__sect--list--product--info--text--name" onclick="verProducto(${elegido.id})">${elegido.producto}</h2>
                 <h3 class="carrito-main__sect--list--product--info--text--price">${'$' + (elegido.cantidad * elegido.precio)}</h3>
                 <div class="carrito-main__sect--list--product--info--text--cantidad">
-                    <button class="carrito-main__sect--list--product--info--text--cantidad" id="restarProducto">-</button>
+                    <button class="carrito-main__sect--list--product--info--text--cantidad--buttons" onclick="agregarQuitar(${elegido.id}, 'quitar')" id="restarProducto">-</button>
                     <input type="number" class="carrito-main__sect--list--product--info--text--cantidad--input" value="${elegido.cantidad}" onchange="actualizarCantidad(${elegido.id})" id="inputCantidad-${elegido.id}"></input>
-                    <button class="carrito-main__sect--list--product--info--text--cantidad" id="sumarProducto">+</button>
-                </div>
-                <div class="carrito-main__sect--list--product--info--text--div">
-                    <h3 class="carrito-main__sect--list--product--info--text--div--buy">Comprar</h3>
+                    <button class="carrito-main__sect--list--product--info--text--cantidad--buttons" onclick="agregarQuitar(${elegido.id}, 'agregar')" id="sumarProducto">+</button>
                 </div>
             </div>
         </div>
@@ -220,6 +217,21 @@ const renderCarrito = () =>{
     }
 }
 //RENDERIZAR CARRITO = END
+
+
+//SUMAR O RESTAR CANTIDAD BOTONES = START
+const agregarQuitar = (id, funcion) =>{
+    const inputValue = document.getElementById(`inputCantidad-${id}`)
+    let cantidad = parseInt(inputValue.value)
+    if (funcion === 'quitar' && cantidad>1){
+        cantidad--;
+    }else if(funcion === 'agregar'){
+        cantidad++
+    }
+    inputValue.value = cantidad
+    actualizarCantidad(id)
+}
+//SUMAR O RESTAR CANTIDAD BOTONES = END
 
 
 //ACTUALIZAR CANTIDAD = START
