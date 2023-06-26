@@ -13,7 +13,6 @@ window.onscroll = () =>{
 
 //HEADER APPEAR = START
 let logoEsVisible = false
-const bodyRect = document.body.getBoundingClientRect();
 window.addEventListener('scroll', ()=>{
     const divLogoHeader = document.getElementById ('divLogoHeader')
     const logoHeader = document.getElementById ('logoHeader')

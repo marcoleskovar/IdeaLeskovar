@@ -65,6 +65,7 @@
                                     background-color: transparent;
                                     border: 1px solid rgb(0, 64, 203);
                                     border-radius: 5px;
+                                    cursor: default;
                                     &::-webkit-inner-spin-button, .carrito-main__sect--list--product--info--text--cantidad--input::-webkit-outer-spin-button{
                                         -webkit-appearance: none;
                                     }
@@ -84,14 +85,13 @@
                         @include mar (10px);
                         @include widhei (1.8em, auto);
                         cursor: pointer;
-                        & path{
-                            color: rgb(141, 10, 10);
-                        }
+                        color: rgb(141, 10, 10);
                     }
                 }
             }
             &--vacio{
                 @include widhei (100%, 100%);
+                @include justali (start, center);
                 @include display (flex);
                 @include flex (col);
                 position: fixed;
@@ -103,17 +103,17 @@
                     font-family: 'Poppins'
                 }
                 &--comprar{
-                    @include texts (1.2em, 400, rgb(57, 57, 57));
-                    @include pad (15px 0 0 0);
+                    @include widhei (100%, auto);
+                    @include display (flex);
+                    @include justali (center, center);
+                    @include texts (1.2em, 400, rgb(210, 210, 210));
+                    @include marpad (15px 0 0 0, 5px);
+                    border-radius: 10px;
+                    border: none;
+                    background-color: rgb(9, 77, 172);
                     font-family: 'Poppins';
-                    &--catalogo{
-                        @include texts (1em, 500, rgb(215, 51, 119));
-                        font-family: 'Poppins';
-                        text-decoration: none;
-                        cursor: pointer;
-                        &:hover{
-                            @include texts (1em, 500, rgb(176, 0, 73));
-                        }
+                    &:hover{
+                        background-color: rgb(9, 57, 124);
                     }
                 }
             }
@@ -173,7 +173,7 @@
                 border: none;
                 background-color: rgb(9, 77, 172);
                 &:hover{
-                    background-color: rgb(9, 71, 156);
+                    background-color: rgb(9, 57, 124);
                 }
             }
         }

@@ -653,6 +653,7 @@ html {
   background-color: transparent;
   border: 1px solid rgb(0, 64, 203);
   border-radius: 5px;
+  cursor: default;
 }
 .carrito-main__sect--list--product--info--text--cantidad--input::-webkit-inner-spin-button, .carrito-main__sect--list--product--info--text--cantidad--input .carrito-main__sect--list--product--info--text--cantidad--input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -673,13 +674,13 @@ html {
   width: 1.8em;
   height: auto;
   cursor: pointer;
-}
-.carrito-main__sect--list--product--trash path {
   color: rgb(141, 10, 10);
 }
 .carrito-main__sect--vacio {
   width: 100%;
   height: 100%;
+  justify-content: start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -694,24 +695,23 @@ html {
   font-family: "Poppins";
 }
 .carrito-main__sect--vacio--comprar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   font-weight: 400;
-  color: rgb(57, 57, 57);
-  padding: 15px 0 0 0;
+  color: rgb(210, 210, 210);
+  margin: 15px 0 0 0;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(9, 77, 172);
   font-family: "Poppins";
 }
-.carrito-main__sect--vacio--comprar--catalogo {
-  font-size: 1em;
-  font-weight: 500;
-  color: rgb(215, 51, 119);
-  font-family: "Poppins";
-  text-decoration: none;
-  cursor: pointer;
-}
-.carrito-main__sect--vacio--comprar--catalogo:hover {
-  font-size: 1em;
-  font-weight: 500;
-  color: rgb(176, 0, 73);
+.carrito-main__sect--vacio--comprar:hover {
+  background-color: rgb(9, 57, 124);
 }
 .carrito-main__final {
   justify-content: center;
@@ -794,7 +794,7 @@ html {
   background-color: rgb(9, 77, 172);
 }
 .carrito-main__final--buy:hover {
-  background-color: rgb(9, 71, 156);
+  background-color: rgb(9, 57, 124);
 }
 
 /*# sourceMappingURL=main.css.map */
