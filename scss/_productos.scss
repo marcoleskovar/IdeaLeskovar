@@ -3,13 +3,13 @@
         @extend .index-main;
         @include widhei (100%, 100%);
         @include justali (center, start);
-        background: linear-gradient(135deg, rgb(33, 33, 33), rgb(29, 29, 29));
+        background-color: rgb(207, 207, 207);
         &__sect{
             @include widhei (100%, auto);
-            @include justali (center, center);
+            @include justali (start, center);
             @include display (flex);
             @include flex (wrap);
-            @include pad (60px 0 0 0 );
+            @include pad (60px 20px 0 30px );
             text-align: center;
             position: relative;
             &--div{
@@ -59,7 +59,7 @@
             position: sticky;
             top: 0;
             right: 0;
-            background-color: rgb(211, 211, 211);
+            background-color: rgb(228, 228, 228);
             &--texto{
                 @include texts(1em, 500, rgb(0, 21, 103));
                 @include marpad (0, 5px);
@@ -82,10 +82,13 @@
                         font-family: 'Poppins';
                         border: 1px solid rgb(196, 196, 196);
                         border-radius: 5px;
+                        &::-webkit-inner-spin-button, .carrito-main__sect--list--product--info--text--cantidad--input::-webkit-outer-spin-button{
+                            -webkit-appearance: none;
+                        }
                     }
                 }
                 &--button{
-                    @include texts (1em, 500, rgb(206, 206, 206));
+                    @include texts (1em, 500, rgb(235, 235, 235));
                     @include marpad (20px 0 0 10px, 3px);
                     background-color: rgb(0, 89, 118);
                     border: 0;

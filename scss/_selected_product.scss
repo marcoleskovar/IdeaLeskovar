@@ -29,11 +29,60 @@
                     @include texts (2em, 600, rgb(25, 25, 25));
                     font-family: 'Poppins';
                 }
+                &--cantidad{
+                    @include mar(20px 0 0 0);
+                    &--input{
+                        @include widhei (100%, auto);
+                        @include justali (space-around, center);
+                        @include display (flex);
+                        @include texts (0.9em, 400, black);
+                        @include pad (3px 6px);
+                        min-width: 110px;
+                        font-family: 'Poppins';
+                        background-color: rgb(237, 237, 237);
+                        border: none;
+                        border-radius: 5px;
+                        &--arrow{
+                            @include widhei (1.2em, auto);
+                            @include mar(0 0 0 5px);
+                            color: rgb(0, 94, 255);
+                            transition: all 0.1s ease;
+                            &.active{
+                                rotate: 180deg;
+                            }
+                        }
+                    }
+                }
+                &--lista{
+                    @include widhei (10%, auto);
+                    position: absolute;
+                    top: 63%;
+                    left: auto;
+                    visibility: hidden;
+                    box-shadow: 0px -1px 17px -4px rgba(0,0,0,0.75);
+                    &.active{
+                        visibility: visible;
+                    }
+                    &--ul{
+                        @include widhei (100%, auto);
+                        @include marpad(0, 0);
+                        border-radius: 5px;
+                        list-style: none;
+                        background-color: rgb(237, 237, 237);
+                        &--li{
+                            @include texts (0.9em, 400, black);
+                            @include marpad(0, 5px 0 5px 10px);
+                            font-family: 'Poppins';
+                            border-bottom: 1px solid rgb(201, 201, 201);
+                            cursor: pointer;
+                        }
+                    }
+                }
                 &--add{
                     @include texts (1.2em, 600, rgb(213, 213, 213));
                     @include display (flex);
                     @include justali (center, center);
-                    @include marpad (40px 0 0 0, 10px);
+                    @include marpad (30px 0 0 0, 10px);
                     font-family: 'Poppins';
                     background-color: rgb(0, 94, 255);
                     border: none;

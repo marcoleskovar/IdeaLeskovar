@@ -5,7 +5,7 @@
         @include justali (space-between, start);
         @include pad (70px 50px 0 50px);
         min-height: 100vh;
-        background-color: rgb(197, 197, 197);
+        background-color: rgb(207, 207, 207);
         &__sect{
             @include widhei (80%, 100%);
             @include justali (start, center);
