@@ -50,8 +50,8 @@
                 @include pad (12px 30px);
             }
             &--link{
-                @include texts (1.5em, 600, rgb(35, 35, 35));
-                font-family: 'Abril Fat Face', 'sans-serif';
+                @include texts (1.5em, 700, rgb(35, 35, 35));
+                font-family: 'Poppins', 'sans-serif';
                 text-decoration: none;
                 cursor: pointer;
                 z-index: 100000;
@@ -160,8 +160,8 @@
     z-index: 950;
 }
 #logoHeader2{
-    @include texts (1.5em, 600, rgb(35, 35, 35));
-    font-family: 'Abril Fat Face', 'sans-serif';
+    @include texts (1.5em, 700, rgb(35, 35, 35));
+    font-family: 'Poppins', 'sans-serif';
     text-decoration: none;
     cursor: pointer;
     z-index: 100000;

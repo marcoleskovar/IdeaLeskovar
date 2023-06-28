@@ -13,8 +13,8 @@
             position: relative;
             overflow-y:hidden;
             &--text{
-                @include texts (14.5em, 500, transparent);
-                font-family: 'Abril Fatface', sans-serif;
+                @include texts (14.5em, 700, transparent);
+                font-family: 'Poppins', sans-serif;
                 background: linear-gradient(270deg, rgb(35, 180, 209), rgb(10, 103, 254));
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -51,7 +51,6 @@
                         border-radius: 0 30px 30px 0;
                         background-color: rgba(255, 255, 255, 0.124);
                         backdrop-filter: blur(5px);
-                        cursor: pointer;
                         transition: all 0.5s ease-in-out;
                         &:hover{
                             @include widhei (64%, 100%);

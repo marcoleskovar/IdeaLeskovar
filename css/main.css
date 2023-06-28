@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -84,9 +84,9 @@ html {
 }
 .index-header__logo--link {
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 700;
   color: rgb(35, 35, 35);
-  font-family: "Abril Fat Face", "sans-serif";
+  font-family: "Poppins", "sans-serif";
   text-decoration: none;
   cursor: pointer;
   z-index: 100000;
@@ -211,9 +211,9 @@ html {
 
 #logoHeader2 {
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 700;
   color: rgb(35, 35, 35);
-  font-family: "Abril Fat Face", "sans-serif";
+  font-family: "Poppins", "sans-serif";
   text-decoration: none;
   cursor: pointer;
   z-index: 100000;
@@ -245,9 +245,9 @@ html {
 }
 .index-main__div--text {
   font-size: 14.5em;
-  font-weight: 500;
+  font-weight: 700;
   color: transparent;
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(270deg, rgb(35, 180, 209), rgb(10, 103, 254));
   background-clip: text;
   -webkit-background-clip: text;
@@ -291,7 +291,6 @@ html {
   border-radius: 0 30px 30px 0;
   background-color: rgba(255, 255, 255, 0.124);
   backdrop-filter: blur(5px);
-  cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 .index-content__article--div--container-img:hover {
@@ -772,6 +771,9 @@ html {
   border: none;
   background-color: rgb(9, 77, 172);
   font-family: "Poppins";
+}
+.carrito-main__sect--vacio--comprar--catalogo {
+  text-decoration: none;
 }
 .carrito-main__sect--vacio--comprar:hover {
   background-color: rgb(9, 57, 124);

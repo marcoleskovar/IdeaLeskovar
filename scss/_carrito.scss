@@ -112,6 +112,9 @@
                     border: none;
                     background-color: rgb(9, 77, 172);
                     font-family: 'Poppins';
+                    &--catalogo{
+                        text-decoration: none;
+                    }
                     &:hover{
                         background-color: rgb(9, 57, 124);
                     }

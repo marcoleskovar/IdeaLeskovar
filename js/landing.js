@@ -1,4 +1,3 @@
-//PARALLAX METANOIA = START
 window.onscroll = () =>{
     const posicionScroll = window.scrollY
     const metanoiaTexto = document.querySelector('.index-main__div--text')
@@ -8,10 +7,7 @@ window.onscroll = () =>{
     metanoiaTexto.style.transform = `translateY(${posicionScroll * velocidadTexto}px)`
     metanoiaMariposa.style.transform = `translateY(${posicionScroll * velocidadImagen}px)`
 };
-//PARALLAX METANOIA = END
 
-
-//HEADER APPEAR = START
 let logoEsVisible = false
 window.addEventListener('scroll', ()=>{
     const divLogoHeader = document.getElementById ('divLogoHeader')
@@ -31,4 +27,3 @@ window.addEventListener('scroll', ()=>{
         }
     }
 })
-//HEADER APPEAR = END
