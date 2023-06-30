@@ -48,4 +48,12 @@ const badgeCarrito = (total) =>{
     }
     return badge.innerHTML = contenido
 }
+
+const verProducto = (id) =>{
+    let traerProducto = cargarProducto()
+    let producto = traerProducto.find(item => item.id == id)
+    localStorage.setItem('seleccionado', JSON.stringify(producto))
+    location.href = '../views/selected_product.html'
+}
+
 badgeCarrito()

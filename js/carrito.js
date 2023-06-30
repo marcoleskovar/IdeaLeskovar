@@ -55,10 +55,10 @@ const renderCarrito = () =>{
             Parece que aún no hay productos agregados en el carrito
         </h2>
         <a href="../views/productos.html" class="carrito-main__sect--vacio--comprar--catalogo">
-        <button class="carrito-main__sect--vacio--comprar">Visitar Catalogo</button>
+            <button class="carrito-main__sect--vacio--comprar">Visitar Catalogo</button>
         </a>
     </div>`
-        sectionLista.innerHTML = contenidoVacio
+    sectionLista.innerHTML = contenidoVacio
     }else{
         contenedorLista.innerHTML = listaDeCarrito
         contenedorResumen.innerHTML = precioFinal

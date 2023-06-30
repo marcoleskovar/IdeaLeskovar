@@ -15,7 +15,6 @@ const cardCreator = (elementos) =>{
     productCards.innerHTML = cards
 }
 
-const btnFiltrar = document.querySelector('.productos-main__filter--min-max--button');
 const filtrarPrecio = () => {
     const minPrice = parseInt(document.getElementById('minPrice').value);
     const maxPrice = parseInt(document.getElementById('maxPrice').value);
@@ -49,11 +48,4 @@ const filtrarPrecio = () => {
     cardCreator(productosFiltrados);
 };
 
-const verProducto = (id) =>{
-    let traerProducto = cargarProducto()
-    let producto = traerProducto.find(item => item.id == id)
-    localStorage.setItem('seleccionado', JSON.stringify(producto))
-    location.href = '../views/selected_product.html'
-}
-
-btnFiltrar.onclick = filtrarPrecio;
+document.querySelector('.productos-main__filter--min-max--button').onclick = filtrarPrecio;

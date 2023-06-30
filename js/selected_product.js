@@ -75,8 +75,24 @@ const agregarProducto = (id, cantidad) =>{
         agregado.cantidad = cantidad
         carrito.push(agregado)
     }
+    Toastify({
+        text: "Guardado en el carrito!",
+        duration: 1500,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: false,
+        offset: {
+            x: 0, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: 70 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        style:{
+            cursor: 'default',
+            background: "rgba(39, 131, 0, 0.8)",
+        },
+    }).showToast();
     guardarCarrito(carrito)
     badgeCarrito()
+    console.log(agregado.cantidad);
 }
 
 renderProduct()
