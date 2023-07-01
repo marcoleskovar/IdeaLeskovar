@@ -56,4 +56,9 @@ const verProducto = (id) =>{
     location.href = '../views/selected_product.html'
 }
 
+const estaEnElCarrito = (id) =>{
+    const carrito = importarCarrito ()
+    return carrito.some ((elemento) =>elemento.id == id)
+}
+
 badgeCarrito()

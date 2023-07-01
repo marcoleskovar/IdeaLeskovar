@@ -59,11 +59,6 @@ const renderProduct = () =>{
     document.getElementById('productoSeleccionado').innerHTML = contenido
 }
 
-const estaEnElCarrito = (id) =>{
-    const carrito = importarCarrito ()
-    return carrito.some ((elemento) =>elemento.id == id)
-}
-
 const agregarProducto = (id, cantidad) =>{
     const carrito = importarCarrito ()
     const productos = cargarProducto()

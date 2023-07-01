@@ -43,7 +43,7 @@ const renderCarrito = () =>{
         <div class="carrito-main__final--total--word">Total</div>
         <div class="carrito-main__final--total--cash">${'$'+precioProductosTotal()}</div>
     </div>
-    <button class="carrito-main__final--buy">Comprar Carrito</button>`
+    <button class="carrito-main__final--buy" onclick="comprarCarrito()">Comprar Carrito</button>`
 
     let contenidoVacio = ''
     if (productosDelCarrito.length <= 0){
@@ -80,10 +80,7 @@ const eliminarProducto = (id, cantidad) =>{
         position: "right",
         stopOnFocus: true,
         className: `productoEliminado-${id}`,
-        onClick: () => {
-            location.reload();
-            recuperarEliminado(id);
-        },
+        onClick: () => {recuperarEliminado(id);},
         offset: {
             x: 0,
             y: 70
@@ -100,13 +97,22 @@ const eliminarProducto = (id, cantidad) =>{
 const recuperarEliminado = (id) => {
     const arrayEliminados = JSON.parse(localStorage.getItem('eliminado'));
     const carrito = importarCarrito();
+    const alerta = document.getElementsByClassName(`productoEliminado-${id}`)
+    if(carrito.length === 0 && alerta){
+        location.reload();
+    }
     for(const producto of arrayEliminados){
         if (producto.id === id) {
-            carrito.push(producto);
-            guardarCarrito(carrito);
-            renderCarrito();
-            badgeCarrito()
-            return;
+            if (estaEnElCarrito(id)){
+                badgeCarrito()
+                renderCarrito();
+            }else{
+                carrito.push(producto);
+                guardarCarrito(carrito);
+                badgeCarrito()
+                renderCarrito();
+            }
+            return
         }
     }
 }
@@ -115,4 +121,18 @@ const precioProductosTotal = () =>{
     const carrito = importarCarrito ()
     return carrito.reduce((acumulador, elemento) => acumulador += (elemento.precio * elemento.cantidad), 0)
 }
+
+const comprarCarrito = () =>{
+    localStorage.removeItem('carrito')
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: '¡Gracias por tu compra!',
+        showConfirmButton: false,
+        timer: 2500
+    })
+    badgeCarrito()
+    renderCarrito()
+}
+
 renderCarrito()
