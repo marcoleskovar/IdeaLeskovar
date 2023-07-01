@@ -65,12 +65,50 @@ const renderCarrito = () =>{
     }
 }
 
-const eliminarProducto = (id) =>{
+eliminadoArray = []
+const eliminarProducto = (id, cantidad) =>{
     const carrito = importarCarrito()
     const elegido = carrito.filter((item) => item.id != id)
+    const eliminado = carrito.find ((item) => item.id === id)
     guardarCarrito(elegido)
     renderCarrito()
     badgeCarrito()
+    Toastify({
+        text: "Haz click para deshacer",
+        duration: 1500,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        className: `productoEliminado-${id}`,
+        onClick: () => {
+            location.reload();
+            recuperarEliminado(id);
+        },
+        offset: {
+            x: 0,
+            y: 70
+          },
+        style:{
+            cursor: 'pointer',
+            background: "rgba(153, 0, 0, 0.7)",
+        },
+    }).showToast();
+    eliminadoArray.push(eliminado)
+    localStorage.setItem('eliminado', JSON.stringify(eliminadoArray))
+}
+
+const recuperarEliminado = (id) => {
+    const arrayEliminados = JSON.parse(localStorage.getItem('eliminado'));
+    const carrito = importarCarrito();
+    for(const producto of arrayEliminados){
+        if (producto.id === id) {
+            carrito.push(producto);
+            guardarCarrito(carrito);
+            renderCarrito();
+            badgeCarrito()
+            return;
+        }
+    }
 }
 
 const precioProductosTotal = () =>{

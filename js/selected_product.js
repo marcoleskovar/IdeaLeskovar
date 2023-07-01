@@ -24,7 +24,7 @@ const seleccionarLaCantidad = (id, cantidad) =>{
     let arrowSVG= `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="selected-main__sect--info--cantidad--input--arrow bi bi-chevron-down" viewBox="0 0 16 16" id="arrowCantidad">
         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
     </svg>`
-    botonCantidad.innerHTML = cantidad == 1 ? `${cantidad} unidad` + arrowSVG : `${cantidad} unidades` + arrowSVG;
+    botonCantidad.innerHTML = cantidad === 1 ? `${cantidad} unidad` + arrowSVG : `${cantidad} unidades` + arrowSVG;
     const lista = document.getElementById(`listaCantidadProducto`);
     lista.classList.remove('active');
     const arrow = document.getElementById(`arrowCantidad`)
@@ -71,7 +71,7 @@ const agregarProducto = (id, cantidad) =>{
         let posicion = carrito.findIndex((item) => item.id === id)
         carrito[posicion].cantidad += cantidad
     }else{
-        const agregado = productos.find((elemento) => elemento.id == id)
+        const agregado = productos.find((elemento) => elemento.id === id)
         agregado.cantidad = cantidad
         carrito.push(agregado)
     }
@@ -82,17 +82,16 @@ const agregarProducto = (id, cantidad) =>{
         position: "right",
         stopOnFocus: false,
         offset: {
-            x: 0, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: 70 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: 0,
+            y: 70
           },
         style:{
             cursor: 'default',
-            background: "rgba(39, 131, 0, 0.8)",
+            background: "rgba(39, 131, 0, 0.7)",
         },
     }).showToast();
     guardarCarrito(carrito)
     badgeCarrito()
-    console.log(agregado.cantidad);
 }
 
 renderProduct()

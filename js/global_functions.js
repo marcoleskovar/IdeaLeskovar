@@ -51,7 +51,7 @@ const badgeCarrito = (total) =>{
 
 const verProducto = (id) =>{
     let traerProducto = cargarProducto()
-    let producto = traerProducto.find(item => item.id == id)
+    let producto = traerProducto.find(item => item.id === id)
     localStorage.setItem('seleccionado', JSON.stringify(producto))
     location.href = '../views/selected_product.html'
 }
