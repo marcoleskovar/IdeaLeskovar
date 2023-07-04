@@ -1,11 +1,7 @@
 const agregarQuitar = (id, funcion) =>{
     const inputValue = document.getElementById(`inputCantidad-${id}`)
     let cantidad = parseInt(inputValue.value)
-    if (funcion === 'quitar' && cantidad>1){
-        cantidad--;
-    }else if(funcion === 'agregar'){
-        cantidad++
-    }
+    cantidad = (funcion === 'quitar' && cantidad > 1) ? cantidad - 1 : (funcion === 'agregar') ? cantidad + 1 : cantidad;
     inputValue.value = cantidad
     actualizarCantidad(id)
 }
@@ -77,10 +73,10 @@ const eliminarProducto = (id, cantidad) =>{
         text: "Haz click para deshacer",
         duration: 1500,
         gravity: "top",
-        position: "right",
+        position: "center",
         stopOnFocus: true,
         className: `productoEliminado-${id}`,
-        onClick: () => {recuperarEliminado(id);},
+        onClick: () => {recuperarEliminado(id); renderCarrito()},
         offset: {
             x: 0,
             y: 70
@@ -98,9 +94,7 @@ const recuperarEliminado = (id) => {
     const arrayEliminados = JSON.parse(localStorage.getItem('eliminado'));
     const carrito = importarCarrito();
     const alerta = document.getElementsByClassName(`productoEliminado-${id}`)
-    if(carrito.length === 0 && alerta){
-        location.reload();
-    }
+    carrito.length === 0 && alerta && location.reload();
     for(const producto of arrayEliminados){
         if (producto.id === id) {
             if (estaEnElCarrito(id)){
