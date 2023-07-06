@@ -1,3 +1,26 @@
+let productos = [];
+let html = document.documentElement;
+const spinner = document.getElementById('spinnerContainer');
+
+fetch('../js/products.json')
+  .then((response) => response.json())
+  .then((data) => {
+    productos = data;
+    spinner.style.display = 'flex';
+    html.style.overflow = 'hidden';
+
+    setTimeout(() => {
+      spinner.style.display = 'none';
+      html.style.overflow = 'auto';
+    }, 400);
+
+    cardCreator(productos);
+    guardarProducto();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 const guardarProducto = () =>{
     localStorage.setItem('productos', JSON.stringify(productos));
 }

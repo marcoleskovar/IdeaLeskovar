@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&family=Abril+Fatface&display=swap&family=Carter+One&display=swap&family=Righteous&display=swap&family=Pacifico&display=swap&family=Bagel+Fat+One&family=Fjalla+One&family=Oswald:wght@200;300;400;500;600;700&family=Rammetto+One&family=Shrikhand&display=swap');
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
- }
- html{
-    font-size: 62,5%;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    background-color: rgb(226, 226, 226);;
- }
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+html{
+   font-size: 62,5%;
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+   background-color: rgb(226, 226, 226);;
+}
 
 @import "_vars";
 @import "_mixins";

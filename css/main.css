@@ -495,8 +495,9 @@ html {
 }
 
 #spinnerContainer {
+  min-height: 100vh;
   width: 100%;
-  height: 100vh;
+  height: auto;
   justify-content: center;
   align-items: center;
   background-color: rgb(207, 207, 207);
@@ -891,6 +892,38 @@ html {
 }
 .carrito-main__final--buy:hover {
   background-color: rgb(9, 57, 124);
+}
+
+#spinnerContainer {
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(207, 207, 207);
+  overflow: hidden;
+  position: absolute;
+  z-index: 899;
+}
+#spinnerContainer #spinner {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  border: 4px solid #888888;
+  border-top: 4px solid #005187;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  overflow: hidden;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

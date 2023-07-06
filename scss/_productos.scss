@@ -107,7 +107,8 @@
 }
 
 #spinnerContainer{
-    @include widhei (100%, 100vh);
+    min-height: 100vh;
+    @include widhei (100%, auto);
     @include justali (center, center);
     background-color: rgb(207, 207, 207);
     overflow: hidden;
