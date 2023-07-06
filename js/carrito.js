@@ -69,14 +69,18 @@ const eliminarProducto = (id, cantidad) =>{
     guardarCarrito(elegido)
     renderCarrito()
     badgeCarrito()
-    Toastify({
+    const toast = Toastify({
         text: "Haz click para deshacer",
         duration: 1500,
         gravity: "top",
         position: "center",
         stopOnFocus: true,
         className: `productoEliminado-${id}`,
-        onClick: () => {recuperarEliminado(id); renderCarrito()},
+        onClick: () => {
+            toast.hideToast();
+            recuperarEliminado(id);
+            renderCarrito()
+        },
         offset: {
             x: 0,
             y: 70
@@ -106,7 +110,7 @@ const recuperarEliminado = (id) => {
                 badgeCarrito()
                 renderCarrito();
             }
-            return
+            return renderCarrito();
         }
     }
 }
