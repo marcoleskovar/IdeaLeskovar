@@ -1,4 +1,3 @@
-
 const guardarProducto = () =>{
     localStorage.setItem('productos', JSON.stringify(productos));
 }
