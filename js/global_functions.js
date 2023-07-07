@@ -2,7 +2,7 @@ let productos = [];
 let html = document.documentElement;
 const spinner = document.getElementById('spinnerContainer');
 
-fetch('../js/products.json')
+fetch('./js/products.json')
   .then((response) => response.json())
   .then((data) => {
     productos = data;
