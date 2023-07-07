@@ -62,7 +62,7 @@ const renderCarrito = () =>{
 }
 
 eliminadoArray = []
-const eliminarProducto = (id, cantidad) =>{
+const eliminarProducto = (id) =>{
     const carrito = importarCarrito()
     const elegido = carrito.filter((item) => item.id != id)
     const eliminado = carrito.find ((item) => item.id === id)
@@ -108,9 +108,8 @@ const recuperarEliminado = (id) => {
                 carrito.push(producto);
                 guardarCarrito(carrito);
                 badgeCarrito()
-                renderCarrito();
+                return renderCarrito();
             }
-            return renderCarrito();
         }
     }
 }

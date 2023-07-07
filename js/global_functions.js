@@ -82,5 +82,5 @@ const estaEnElCarrito = (id) =>{
     const carrito = importarCarrito ()
     return carrito.some ((elemento) =>elemento.id == id)
 }
-
+  
 badgeCarrito()
