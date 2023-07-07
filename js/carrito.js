@@ -69,30 +69,6 @@ const eliminarProducto = (id) =>{
     guardarCarrito(elegido)
     renderCarrito()
     badgeCarrito()
-    const toast = Toastify({
-        text: "Haz click para deshacer",
-        duration: 1500,
-        gravity: "top",
-        position: "center",
-        stopOnFocus: true,
-        className: `productoEliminado-${id}`,
-        onClick: () => {
-            if(!toastClicked){
-                toastClicked = true
-                toast.hideToast();
-                recuperarEliminado(id);
-                renderCarrito()
-            }
-        },
-        offset: {
-            x: 0,
-            y: 70
-          },
-        style:{
-            cursor: 'pointer',
-            background: "rgba(153, 0, 0, 0.7)",
-        },
-    }).showToast();
     localStorage.setItem('eliminado', JSON.stringify(eliminado))
 }
 
@@ -127,13 +103,40 @@ const comprarCarrito = () =>{
 const loaderCarrito = (id) => {
     const loader = document.getElementById('loaderCarrito');
     loader.classList.add('active');
-  
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (loader){
                 loader.classList.remove('active');
                 eliminarProducto(id);
                 toastClicked = false;
+                const toast = Toastify({
+                    text: "Haz click para deshacer",
+                    duration: 10000,
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: true,
+                    className: `productoEliminado-${id}`,
+                    onClick: () => {
+                        if(!toastClicked){
+                            toastClicked = true
+                            toast.hideToast();
+                            recuperarEliminado(id);
+                            renderCarrito()
+                        }
+                    },
+                    offset: {
+                        x: 0,
+                        y: 70
+                    },
+                    style:{
+                        cursor: 'pointer',
+                        background: "rgba(153, 0, 0, 0.7)",
+                    },
+                })
+                if(!loader.classList.contains('active')){
+                    toast.showToast();
+                    console.log('lol');
+                }
                 resolve();
             }else{
                 setTimeout(() => {
