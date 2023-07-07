@@ -1,5 +1,4 @@
 node_modules/
-*.json
 *.vsc
 *.psd
 *.log
