@@ -191,18 +191,33 @@
     overflow: hidden;
     position: absolute;
     z-index: 899;
-    #spinner{
-        @include widhei (40px, 40px);
-        @include justali (center, center);
-        @include mar(20px auto);
-        border: 4px solid #888888;
-        border-top: 4px solid #005187;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        overflow: hidden;
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+}
+
+.spinner, .spinner-2{
+    @include widhei (40px, 40px);
+    @include justali (center, center);
+    @include mar(20px auto);
+    border: 4px solid #888888;
+    border-top: 4px solid #005187;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    overflow: hidden;
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
+#loaderCarrito{
+    min-height: 100vh;
+    @include widhei (100%, auto);
+    @include justali (center, center);
+    background-color: rgba(207, 207, 207, 0.556);
+    overflow: hidden;
+    position: absolute;
+    z-index: 899;
+    display: none;
+    &.active{
+        display: flex;
     }
 }
