@@ -111,7 +111,7 @@ const loaderCarrito = (id) => {
                 toastClicked = false;
                 const toast = Toastify({
                     text: "Haz click para deshacer",
-                    duration: 10000,
+                    duration: 1500,
                     gravity: "top",
                     position: "center",
                     stopOnFocus: true,
